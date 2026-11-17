@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="csharp-oop-fundamentals.csproj" />
+  <Project Path="csharp-oop-fundamento.Domain/csharp-oop-fundamento.Domain.csproj" />
 </Solution>

@@ -10,45 +10,45 @@ public class FuncionariosModel : PageModel
 {
     // Armazenamento em memória, só para o estudo (some ao reiniciar a aplicação).
     // Depois troque por AppDbContext/Service.
-    private static readonly List<FuncionarioM> _funcionarios = new();
+    // private static readonly List<FuncionarioM> _funcionarios = new();
     private static int _proximoId = 1;
 
     [BindProperty]
     public FuncionarioInput Input { get; set; } = new();
 
-    public IReadOnlyList<FuncionarioM> Funcionarios => _funcionarios;
+    // public IReadOnlyList<FuncionarioM> Funcionarios => _funcionarios;
 
     public void OnGet() { }
 
-    public IActionResult OnPost()
-    {
-        // Regras extras que as annotations não cobrem
-        if (!string.IsNullOrWhiteSpace(Input.Email) &&
-            _funcionarios.Any(f => string.Equals(f.Email, Input.Email, StringComparison.OrdinalIgnoreCase)))
-        {
-            ModelState.AddModelError("Input.Email", "Já existe um funcionário com este e-mail.");
-        }
+    // public IActionResult OnPost()
+    // {
+    //     // Regras extras que as annotations não cobrem
+    //     if (!string.IsNullOrWhiteSpace(Input.Email) &&
+    //         _funcionarios.Any(f => string.Equals(f.Email, Input.Email, StringComparison.OrdinalIgnoreCase)))
+    //     {
+    //         ModelState.AddModelError("Input.Email", "Já existe um funcionário com este e-mail.");
+    //     }
 
-        if (!ModelState.IsValid)
-            return Page(); // reexibe o formulário com os erros
+    //     if (!ModelState.IsValid)
+    //         return Page(); // reexibe o formulário com os erros
 
-        _funcionarios.Add(new FuncionarioM
-        {
-            Id = _proximoId++,
-            Nome = Input.Nome.Trim(),
-            Idade = Input.Idade!.Value,
-            Sexo = Input.Sexo,
-            Telefone = Input.Telefone,
-            Email = Input.Email,
-            Endereco = Input.Endereco.Trim(),
-            Periodo = Input.Periodo!.Value,
-            TipoContrato = Input.TipoContrato!.Value,
-            Salario = Input.Salario!.Value
-        });
+    //     _funcionarios.Add(new FuncionarioM
+    //     {
+    //         Id = _proximoId++,
+    //         Nome = Input.Nome.Trim(),
+    //         Idade = Input.Idade!.Value,
+    //         Sexo = Input.Sexo,
+    //         Telefone = Input.Telefone,
+    //         Email = Input.Email,
+    //         Endereco = Input.Endereco.Trim(),
+    //         Periodo = Input.Periodo!.Value,
+    //         TipoContrato = Input.TipoContrato!.Value,
+    //         Salario = Input.Salario!.Value
+    //     });
 
-        TempData["Sucesso"] = "Funcionário cadastrado com sucesso!";
-        return RedirectToPage(); // evita reenvio do formulário ao apertar F5
-    }
+    //     TempData["Sucesso"] = "Funcionário cadastrado com sucesso!";
+    //     return RedirectToPage(); // evita reenvio do formulário ao apertar F5
+    // }
 
     public class FuncionarioInput
     {

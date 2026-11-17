@@ -1,4 +1,4 @@
-namespace csharp_oop_fundamentals.Models;
+namespace csharp_oop_fundamento.Domain.Models;
 
 public class Pet
 {
