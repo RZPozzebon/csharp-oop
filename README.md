@@ -1,10 +1,12 @@
-Repositório voltado para estudos. Estou passando por uma reciclagem.
+Repositório voltado para estudos. Estou querendo passar por uma transição de carreira. Sair do Delphi Deskotp e ir para o mundo WEB.
+
+Linguagem escolhida, CSharp, pois já tive contato no passado. 
 
 Esse projeto, será direcionado para isso. Então vamos tentar criar um projeto do ZERO, utilizando asp.net.
 
 Descrição do projeto:
 
-1 - Primeiro passa, será criar um CRUD, com a orientação objeto utilizando DAPPER.
+1 - Primeiro passo, será criar um CRUD, com a orientação objeto utilizando Entity Framework (EF).
 
 --- Ideia de projeto será voltara em criar um sistema para uma empresa de Petshop.
 
